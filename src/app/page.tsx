@@ -1,103 +1,136 @@
-import Image from "next/image";
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { ArrowRight, Sparkles, Users, Target, Zap } from 'lucide-react'
+import Link from 'next/link'
+import { TasteGraph } from './taste-graph'
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className='min-h-screen'>
+      <section className='container mx-auto px-6 pt-20 pb-16'>
+        <div className='max-w-4xl mx-auto text-center'>
+          <Badge
+            variant='secondary'
+            className='mb-6 bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200'
+          >
+            <Sparkles className='w-4 h-4 mr-2' />
+            AI-Powered Cultural Intelligence
+          </Badge>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <h1 className='text-5xl md:text-7xl font-light tracking-tight mb-8 bg-gradient-to-br from-stone-900 via-stone-700 to-amber-600 bg-clip-text text-transparent dark:from-stone-100 dark:via-stone-300 dark:to-amber-400'>
+            Discover Your
+            <br />
+            <span className='font-medium'>Ideal Audience</span>
+          </h1>
+
+          <p className='text-xl text-stone-600 dark:text-stone-400 mb-12 max-w-2xl mx-auto leading-relaxed'>
+            Aurea uses taste data and cultural intelligence to help indie
+            creators and niche brands find their perfect audience through the
+            power of AI.
+          </p>
+
+          <div className='flex flex-col sm:flex-row gap-4 justify-center mb-16'>
+            <Link href='/onboarding'>
+              <Button
+                size='lg'
+                className='bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white border-0'
+              >
+                Start Discovery
+                <ArrowRight className='w-5 h-5 ml-2' />
+              </Button>
+            </Link>
+            <Button
+              variant='outline'
+              size='lg'
+              className='border-stone-300 dark:border-stone-600 bg-transparent'
+            >
+              Watch Demo
+            </Button>
+          </div>
+          <TasteGraph />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      <section className='container mx-auto px-6 py-20'>
+        <div className='max-w-6xl mx-auto'>
+          <div className='text-center mb-16'>
+            <h2 className='text-3xl md:text-4xl font-light tracking-tight mb-6'>
+              Your Creative Intelligence Assistant
+            </h2>
+            <p className='text-lg text-stone-600 dark:text-stone-400 max-w-2xl mx-auto'>
+              Transform cultural insights into actionable audience strategies
+              with our AI-powered platform.
+            </p>
+          </div>
+
+          <div className='grid md:grid-cols-3 gap-8'>
+            <Card className='border-stone-200 dark:border-stone-700 bg-white/50 dark:bg-stone-800/50 backdrop-blur-sm'>
+              <CardContent className='p-8'>
+                <div className='w-12 h-12 bg-gradient-to-br from-amber-400 to-rose-400 rounded-xl flex items-center justify-center mb-6'>
+                  <Target className='w-6 h-6 text-white' />
+                </div>
+                <h3 className='text-xl font-medium mb-4'>
+                  Taste Graph Analysis
+                </h3>
+                <p className='text-stone-600 dark:text-stone-400 leading-relaxed'>
+                  Interactive visualization of cultural affinities and taste
+                  clusters that define your ideal audience.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className='border-stone-200 dark:border-stone-700 bg-white/50 dark:bg-stone-800/50 backdrop-blur-sm'>
+              <CardContent className='p-8'>
+                <div className='w-12 h-12 bg-gradient-to-br from-rose-400 to-amber-400 rounded-xl flex items-center justify-center mb-6'>
+                  <Users className='w-6 h-6 text-white' />
+                </div>
+                <h3 className='text-xl font-medium mb-4'>Audience Personas</h3>
+                <p className='text-stone-600 dark:text-stone-400 leading-relaxed'>
+                  Detailed personas with moodboards, cultural preferences, and
+                  platform recommendations.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className='border-stone-200 dark:border-stone-700 bg-white/50 dark:bg-stone-800/50 backdrop-blur-sm'>
+              <CardContent className='p-8'>
+                <div className='w-12 h-12 bg-gradient-to-br from-amber-400 to-rose-400 rounded-xl flex items-center justify-center mb-6'>
+                  <Zap className='w-6 h-6 text-white' />
+                </div>
+                <h3 className='text-xl font-medium mb-4'>Launch Packs</h3>
+                <p className='text-stone-600 dark:text-stone-400 leading-relaxed'>
+                  One-click export of tailored brand copy, visual tone, and
+                  community strategies.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      <section className='container mx-auto px-6 py-20'>
+        <div className='max-w-4xl mx-auto text-center'>
+          <Card className='border-stone-200 dark:border-stone-700 bg-gradient-to-br from-white/80 to-amber-50/50 dark:from-stone-800/80 dark:to-stone-700/50 backdrop-blur-sm'>
+            <CardContent className='p-12'>
+              <h2 className='text-3xl md:text-4xl font-light tracking-tight mb-6'>
+                Ready to Find Your Tribe?
+              </h2>
+              <p className='text-lg text-stone-600 dark:text-stone-400 mb-8 max-w-2xl mx-auto'>
+                Join creators who&apos;ve discovered their perfect audience
+                through cultural intelligence and AI-powered insights.
+              </p>
+              <Link href='/onboarding'>
+                <Button
+                  size='lg'
+                  className='bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white border-0'
+                >
+                  Begin Your Journey
+                  <ArrowRight className='size-5 ml-2' />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
