@@ -31,7 +31,7 @@ export async function ApiClient<T>(
       throw err
     }
     return response.json()
-  } catch (err: any) {
-    throw new Error(err)
+  } catch (err: unknown) {
+    throw new Error(err instanceof Error ? err.message : String(err))
   }
 }
