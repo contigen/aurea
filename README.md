@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aurea — Taste-Driven Audience Intelligence
 
-## Getting Started
+**Aurea** is a taste-powered, privacy-first audience discovery tool for indie creators, niche brands, and cultural products.  
+Built for the [Qloo LLM Hackathon](https://qloo.devpost.com/), Aurea combines the power of **LLMs** with **Qloo’s Taste AI™ API** to help you find your ideal audience
 
-First, run the development server:
+## What it does?
+
+Input your brand's _tone_, _inspiration_, or _vibe_ — and Aurea builds personas and a complete **Launch Pack**
+
+- Lazy loaded dynamic icon from Lucide react via an LLM
+- Generate personas' images via Gemini 2.0 flash preview image generation model
+- Upload image to Pinata cloud
+- Generate personas via Gemini using the entity endpoint as the data source
+- Generate launchpacks
+
+All powered with **zero personal data.**
+
+## Key Features
+
+| Feature                       | Description                                                           |
+| ----------------------------- | --------------------------------------------------------------------- |
+| **Taste-Inspired Onboarding** | Describe your brand’s tone, inspirations, and cultural DNA            |
+| **Cultural Audience Mapping** | Discover who aligns with your brand based on taste — not demographics |
+
+---
+
+## Example Use Case
+
+> `"I’m launching a slow fashion line inspired by Phoebe Bridgers, Nordic noir, and French arthouse cinema."`
+
+**Aurea Returns**:
+
+- Cultural personas: `Dark academia`, `Indie film lovers`, `Post-rock fans`
+- Platforms: `Tumblr`, `Substack`, `Pinterest`, `r/malefashion`
+- Copy: `"Clothes for the quiet storm inside you."`
+- Launch Pack with tone & hashtags
+- Moodboard: Futute Update
+
+---
+
+## 🏗️ Technologies
+
+- `Next.js App Router (TypeScript)`
+- Gemini via Vercel AI SDK
+- `TailwindCSS + Shadcn UI` – for elegant, responsive frontend
+- Zod for AI structured output
+- `Vercel` – for deployment
+
+---
+
+## 🚀 Getting Started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/contigen/aurea
+cd aurea
+
+# Add your Qloo API, + Gemini, Pinata IPFS API keys
+bun install
+bun run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
